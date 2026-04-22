@@ -6,20 +6,20 @@ Image=ghcr.io/stalwartlabs/stalwart:latest
 ContainerName=stalwart
 Network=podz.network
 ## SMTP
-#PublishPort=25
-PublishPort=465
-#PublishPort=587
+#PublishPort=25:25
+PublishPort=465:465
+#PublishPort=587:587
 ## IMAP
-#PublishPort=143
-PublishPort=993
+#PublishPort=143:143
+PublishPort=993:993
 ## POP3
-#PublishPort=110
-PublishPort=995
+#PublishPort=110:110
+PublishPort=995:995
 ## ManageSieve
-#PublishPort=4190
+#PublishPort=4190:4190
 ## HTTP
-#PublishPort=443
-PublishPort=8080
+#PublishPort=443:443
+#PublishPort=8080:8080
 Volume=stalwart-etc:/etc/stalwart:Z
 Volume=stalwart-data:/var/lib/stalwart:Z
 
