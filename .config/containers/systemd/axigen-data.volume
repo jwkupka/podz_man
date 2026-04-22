@@ -1,0 +1,4 @@
+[Unit]
+Description=Axigen mailserver persistent storage
+
+[Volume]
