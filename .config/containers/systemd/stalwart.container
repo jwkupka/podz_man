@@ -22,6 +22,7 @@ PublishPort=995:995
 #PublishPort=8080:8080
 Volume=stalwart-etc:/etc/stalwart:Z
 Volume=stalwart-data:/var/lib/stalwart:Z
+Secret=cloudflare_api_key,type=env,target=CLOUDFLARE_API_KEY
 
 [Install]
 WantedBy=default.target
