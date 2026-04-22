@@ -4,7 +4,7 @@ Description=Stalwart Mail Server
 [Container]
 Image=ghcr.io/stalwartlabs/stalwart:latest
 ContainerName=stalwart
-Network=oci.network
+Network=podz.network
 ## SMTP
 #PublishPort=25
 PublishPort=465

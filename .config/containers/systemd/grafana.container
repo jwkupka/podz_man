@@ -10,7 +10,7 @@ Volume=grafana-data:/var/lib/grafana
 #Environment=GF_SECURITY_ADMIN_PASSWORD=password
 Environment=GF_INSTALL_PLUGINS=grafana-strava-datasource
 Environment=GF_FEATURE_TOGGLES_ENABLE=externalServiceAccounts
-Network=oci.network
+Network=podz.network
 
 [Service]
 Restart=always

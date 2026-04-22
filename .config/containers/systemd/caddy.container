@@ -11,7 +11,7 @@ Volume=%h/etc/Caddyfile:/etc/caddy/Caddyfile:Z
 Volume=caddy-data:/data:Z
 Secret=cloudflare_api_key,type=env,target=CLOUDFLARE_API_KEY
 Timezone=local
-Network=oci.network
+Network=podz.network
 Notify=true
 
 [Service]
