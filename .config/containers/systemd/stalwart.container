@@ -1,0 +1,20 @@
+[Unit]
+Description=Stalwart Mail Server
+
+[Container]
+Image=ghcr.io/stalwartlabs/stalwart:latest
+ContainerName=stalwart
+#Network=host
+Network=oci.network
+#PublishPort=25
+PublishPort=465
+PublishPort=587
+PublishPort=993
+PublishPort=995
+# Sieve? PublishPort=4190
+PublishPort=8080
+Volume=stalwart-etc:/etc/stalwart:Z
+Volume=stalwart-data:/var/lib/stalwart:Z
+
+[Install]
+WantedBy=default.target

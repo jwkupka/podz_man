@@ -1,0 +1,11 @@
+[Unit]
+Description=Caddy HTTP/HTTPS Sockets
+
+[Socket]
+BindIPv6Only=both
+ListenStream=[::]:80
+ListenStream=[::]:443
+ListenDatagram=[::]:443
+
+[Install]
+WantedBy=sockets.target
