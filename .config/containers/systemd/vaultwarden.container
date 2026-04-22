@@ -2,7 +2,6 @@
 ContainerName=vaultwarden
 Image=docker.io/vaultwarden/server:latest
 AutoUpdate=registry
-#Environment=ROCKET_PORT=8080
 Volume=vaultwarden-data:/data:Z
 Network=oci.network
 
