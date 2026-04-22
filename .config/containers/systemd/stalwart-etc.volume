@@ -1,0 +1,4 @@
+[Unit]
+Description=Stalwart persistent etc storage
+
+[Volume]

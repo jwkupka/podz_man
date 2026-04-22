@@ -1,0 +1,4 @@
+[Unit]
+Description=Vaultwarden persistent data
+
+[Volume]
