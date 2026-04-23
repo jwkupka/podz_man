@@ -1,9 +1,12 @@
+[Unit]
+Description=vaultwarden
+
 [Container]
 ContainerName=vaultwarden
 Image=docker.io/vaultwarden/server:latest
 AutoUpdate=registry
-Volume=vaultwarden-data:/data:Z
 Network=podz.network
+Volume=vaultwarden-data:/data:Z
 
 [Service]
 Restart=always

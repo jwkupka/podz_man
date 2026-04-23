@@ -8,6 +8,25 @@ RHEL podman quadlet configs
 sudo echo net.ipv4.ip_unprivileged_port_start = 80 | sudo tee /etc/sysctl.d/90-unprivileged_port_start.conf                                                                                                
 sudo sysctl --system     
 ```
+### firewall
+`sudo firewall-cmd --add-service={http,http3,https} --permanent`
+
+
+`sudo firewall-cmd --add-port=8080/tcp`
+
+#### Insecure mail ports
+`sudo firewall-cmd --add-service={smtp,imap,pop3} --permanent`
+
+#### Secure mail ports
+`sudo firewall-cmd --add-service={smtp,smtp-submission,imaps,pop3s} --add-port=4190/tcp --permanent `
+
+#### Minimal
+`sudo firewall-cmd --add-service={smtp,smtp-submission,imaps} --permanent`
+
+#### Sieve thingy
+`sudo firewall-cmd --add-service={smtp,smtp-submission,imaps,pop3s} --add-port=4190/tcp --permanent `
+
+
 ### Account to run podz
 ```                                                                         
 sudo useradd --create-home podz_man                                                                 
