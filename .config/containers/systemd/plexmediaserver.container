@@ -7,21 +7,18 @@ ContainerName=plexmediaserver
 Image=docker.io/plexinc/pms-docker:beta
 AutoUpdate=registry
 
-#Network=podz.network
 PublishPort=32400:32400
 
 Volume=plexmediaserver-config:/config:Z
 Volume=plexmediaserver-transcode:/transcode:Z
-Volume=plexmediaserver-tls:/tls:Z
-Volume=/mnt/data/video:/media/video:ro:Z
-Volume=/mnt/data/music:/media/music:ro:Z
-Volume=/mnt/data/photo:/media/photo:ro:Z
+Volume=/mnt/data/video:/media/video:ro
+Volume=/mnt/data/music:/media/music:ro
+Volume=/mnt/data/photo:/media/photo:ro
+
+Environment=PLEX_UID=0 PLEX_GID=0
+#Environment=PLEX_CLAIM="https://account.plex.tv/claim"
 
 Timezone=local
-
-Environment=PLEX_UID=0
-Environment=PLEX_GID=0
-#Environment=PLEX_CLAIM="https://account.plex.tv/claim"
 
 [Service]
 Restart=always
