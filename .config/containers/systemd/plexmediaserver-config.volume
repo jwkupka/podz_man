@@ -1,0 +1,4 @@
+[Unit]
+Description=Plex Media Server library storage
+
+[Volume]

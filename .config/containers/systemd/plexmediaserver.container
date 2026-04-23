@@ -1,0 +1,27 @@
+[Unit]
+Description=Plex Media Server
+After=network-online.target
+
+[Container]
+ContainerName=plexmediaserver
+#Image=docker.io/linuxserver/plex:latest
+Image=ghcr.io/plexinc/pms-docker:beta
+AutoUpdate=registry
+
+#Network=podz.network
+PublishPort=32400:32400
+
+Volume=plexmediaserver-config:/config:Z
+Volume=/mnt/data/video:/media/video:ro:Z
+Volume=/mnt/data/music:/media/music:ro:Z
+Volume=/mnt/data/photo:/media/photo:ro:Z
+
+Timezone=local
+
+#Environment=PLEX_CLAIM="claim-your-server"
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
