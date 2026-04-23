@@ -1,2 +1,4 @@
+[Unit]
+Description=Caddy persistent storage - certs and whatnot
+
 [Volume]
-# Caddy persistent storage - certs and whatnot
