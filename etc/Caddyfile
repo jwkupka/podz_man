@@ -1,0 +1,48 @@
+## Global options block                                  
+{
+  email jason@desanity.net
+  acme_dns cloudflare {env.CLOUDFLARE_API_KEY}
+  acme_ca https://acme-v02.api.letsencrypt.org/directory
+#  acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+  ech ech.home.desanity.net
+#  debug # recommended while testing
+#}
+
+## Socket activation
+  default_bind fd/3 {
+    protocols h1
+  }
+  default_bind fd/4 {
+    protocols h1 h2
+  }
+  default_bind fdgram/5 {
+    protocols h3
+  }
+#  admin unix//run/admin.sock
+#  auto_https disable_redirects
+}
+
+## Services
+
+mail.home.desanity.net {
+  reverse_proxy stalwart:443 {
+    transport http {
+      proxy_protocol v2
+#      tls
+      tls_insecure_skip_verify
+#      tls_server_name mail.home.desanity.net
+    }
+  }
+}
+
+vaultwarden.oci.home.desanity.net {
+  reverse_proxy vaultwarden:80
+}
+
+prometheus.oci.home.desanity.net {
+  reverse_proxy prometheus:9090
+}
+
+grafana.oci.home.desanity.net {
+  reverse_proxy grafana:3000
+}
