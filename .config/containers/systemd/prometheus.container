@@ -1,0 +1,10 @@
+[Container]
+Image=docker.io/prom/prometheus:latest
+Volume=prometheus-data:/prometheus
+# Volume=/home/user/prometheus.yml:/etc/prometheus.yml
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
