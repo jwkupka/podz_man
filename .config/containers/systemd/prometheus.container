@@ -1,7 +1,10 @@
 [Container]
+ContainerName=prometheus
 Image=docker.io/prom/prometheus:latest
+AutoUpdate=registry
 Volume=prometheus-data:/prometheus
 # Volume=/home/user/prometheus.yml:/etc/prometheus.yml
+Network=podz.network
 
 [Service]
 Restart=always
