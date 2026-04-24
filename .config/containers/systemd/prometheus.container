@@ -2,8 +2,8 @@
 ContainerName=prometheus
 Image=docker.io/prom/prometheus:latest
 AutoUpdate=registry
-Volume=prometheus-data:/prometheus
-Volume=%h/etc/prometheus.yml:/etc/prometheus.yml
+Volume=prometheus-data:/prometheus:Z
+Volume=%h/etc/prometheus.yml:/etc/prometheus.yml:Z
 Network=podz.network
 
 [Service]
