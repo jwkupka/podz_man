@@ -24,25 +24,25 @@
 
 ## Services
 
-mail.home.desanity.net {
+mail.{env.HOME_DOMAIN} {
   reverse_proxy stalwart:443 {
     transport http {
       proxy_protocol v2
 #      tls
       tls_insecure_skip_verify
-#      tls_server_name mail.home.desanity.net
+#      tls_server_name mail.{env.HOME_DOMAIN}
     }
   }
 }
 
-vaultwarden.oci.home.desanity.net {
+vaultwarden.oci.{env.HOME_DOMAIN} {
   reverse_proxy vaultwarden:80
 }
 
-prometheus.oci.home.desanity.net {
+prometheus.oci.{env.HOME_DOMAIN} {
   reverse_proxy prometheus:9090
 }
 
-grafana.oci.home.desanity.net {
+grafana.oci.{env.HOME_DOMAIN} {
   reverse_proxy grafana:3000
 }
