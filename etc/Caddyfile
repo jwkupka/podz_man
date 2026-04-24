@@ -1,12 +1,11 @@
 ## Global options block                                  
 {
-  email jason@desanity.net
+  email {$EMAIL}
   acme_dns cloudflare {env.CLOUDFLARE_API_KEY}
   acme_ca https://acme-v02.api.letsencrypt.org/directory
 #  acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
-  ech ech.home.desanity.net
+  ech ech.{$DOMAIN}
 #  debug # recommended while testing
-#}
 
 ## Socket activation
   default_bind fd/3 {
@@ -24,25 +23,25 @@
 
 ## Services
 
-mail.{env.HOME_DOMAIN} {
+mail.{$DOMAIN} {
   reverse_proxy stalwart:443 {
     transport http {
       proxy_protocol v2
 #      tls
       tls_insecure_skip_verify
-#      tls_server_name mail.{env.HOME_DOMAIN}
+#      tls_server_name mail.{$DOMAIN}
     }
   }
 }
 
-vaultwarden.oci.{env.HOME_DOMAIN} {
+vaultwarden.oci.{$DOMAIN} {
   reverse_proxy vaultwarden:80
 }
 
-prometheus.oci.{env.HOME_DOMAIN} {
+prometheus.oci.{$DOMAIN} {
   reverse_proxy prometheus:9090
 }
 
-grafana.oci.{env.HOME_DOMAIN} {
+grafana.oci.{$DOMAIN} {
   reverse_proxy grafana:3000
 }
