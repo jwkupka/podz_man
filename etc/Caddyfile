@@ -34,7 +34,7 @@ mail.{$DOMAIN} {
   }
 }
 
-vaultwarden.oci.{$DOMAIN} {
+vault.oci.{$DOMAIN} {
   reverse_proxy vaultwarden:80
 }
 
