@@ -10,7 +10,7 @@ AutoUpdate=registry
 Volume=%h/etc/Caddyfile:/etc/caddy/Caddyfile:Z
 Volume=caddy-data:/data:Z
 Secret=cloudflare_api_key,type=env,target=CLOUDFLARE_API_KEY
-EnvironmentFile=%h/etc/caddy.env
+EnvironmentFile=%h/etc/vars.env
 Timezone=local
 Network=podz.network
 Notify=true
