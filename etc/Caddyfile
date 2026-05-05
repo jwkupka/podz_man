@@ -35,7 +35,9 @@ mail.{$DOMAIN} {
 }
 
 vault.oci.{$DOMAIN} {
+  encode gzip
   reverse_proxy vaultwarden:80
+  reverse_proxy /notifications/hub vaultwarden:3012
 }
 
 prometheus.oci.{$DOMAIN} {
@@ -45,3 +47,13 @@ prometheus.oci.{$DOMAIN} {
 grafana.oci.{$DOMAIN} {
   reverse_proxy grafana:3000
 }
+
+# WGDashboard for Wireguard LXC
+#wireguard.{$DOMAIN} {
+#  reverse_proxy 192.168.71.244:10086 
+#}
+
+# LinkTap
+#linktap.{$DOMAIN} {
+#  reverse_proxy http://192.168.71.247
+#}
