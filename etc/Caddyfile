@@ -24,6 +24,7 @@
 ## Services
 
 mail.{$DOMAIN} {
+  redir / /admin 301
   reverse_proxy stalwart:443 {
     transport http {
       proxy_protocol v2
