@@ -7,6 +7,18 @@ Image=docker.io/vaultwarden/server:latest
 AutoUpdate=registry
 Network=podz.network
 Volume=vaultwarden-data:/data:Z
+EnvironmentFile=%h/etc/vars.env
+Environment=DOMAIN=https://vault.oci.{$DOMAIN}
+#Environment=WEBSOCKET_ENABLED=true
+
+# BitWarden Push Service https://bitwarden.com/host/
+Environment=PUSH_ENABLED=true
+Secret=bitwarden_id,type=env,target=PUSH_INSTALLATION_ID
+Secret=bitwarden_key,type=env,target=PUSH_INSTALLATION_KEY
+
+# Troubleshooting https://vault.oci.{$DOMAIN}/admin/
+#Environment=LOG_LEVEL=debug
+#Environment=ADMIN_TOKEN=somereallysecurelongstringofcharacters
 
 [Service]
 Restart=always
