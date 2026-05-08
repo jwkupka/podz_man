@@ -3,11 +3,11 @@
   email {$EMAIL}
   acme_dns cloudflare {env.CLOUDFLARE_API_KEY}
   acme_ca https://acme-v02.api.letsencrypt.org/directory
-#  acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+# acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
   ech ech.{$DOMAIN}
-#  debug # recommended while testing
+# debug # recommended while testing
 
-## Socket activation
+  ## Socket activation
   default_bind fd/3 {
     protocols h1
   }
@@ -17,8 +17,8 @@
   default_bind fdgram/5 {
     protocols h3
   }
-#  admin unix//run/admin.sock
-#  auto_https disable_redirects
+# admin unix//run/admin.sock
+# auto_https disable_redirects
 }
 
 ## Services
@@ -28,9 +28,7 @@ mail.{$DOMAIN} {
   reverse_proxy stalwart:443 {
     transport http {
       proxy_protocol v2
-#      tls
       tls_insecure_skip_verify
-#      tls_server_name mail.{$DOMAIN}
     }
   }
 }
@@ -38,7 +36,6 @@ mail.{$DOMAIN} {
 vault.oci.{$DOMAIN} {
   encode gzip
   reverse_proxy vaultwarden:80
-  reverse_proxy /notifications/hub vaultwarden:3012
 }
 
 prometheus.oci.{$DOMAIN} {
