@@ -12,6 +12,7 @@ PublishPort=32400:32400
 Volume=plexmediaserver-config:/config:Z
 Volume=plexmediaserver-transcode:/transcode:Z
 Volume=/mnt/data/video:/media/video:ro
+Volume=/mnt/data/video/DVR:/media/dvr:rw
 Volume=/mnt/data/music:/media/music:ro
 Volume=/mnt/data/photo:/media/photo:ro
 
