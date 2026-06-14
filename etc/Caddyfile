@@ -35,6 +35,10 @@ vault.oci.{$DOMAIN} {
 	reverse_proxy vaultwarden:80
 }
 
+bentopdf.oci.{$DOMAIN} {
+	reverse_proxy bentopdf:3000
+}
+
 prometheus.oci.{$DOMAIN} {
 	reverse_proxy prometheus:9090
 }
