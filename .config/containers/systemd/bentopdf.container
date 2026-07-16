@@ -5,8 +5,8 @@ After=network-online.target
 [Container]
 Image=ghcr.io/alam00000/bentopdf-simple:latest
 ContainerName=bentopdf
-PublishPort=3000:8080
 AutoUpdate=registry
+Network=podz.network
 
 [Service]
 Restart=always
