@@ -87,5 +87,8 @@ Run through the config with no TLS/DKIM/DNS, especially if using subdomain or an
 
 Proxy Protocol. It's important if you're using a reverse proxy, like caddy.
 
+#### Is it dying daily?
+https://wayneoutthere.com/2025/01/06/setting-up-stalwart-with-podman-and-quadlet/
+
 ### LetsEncrypt
 Please use [staging](https://acme-staging-v02.api.letsencrypt.org/directory) to save your sanity
